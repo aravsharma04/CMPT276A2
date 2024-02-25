@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <main class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <h1>Students</h1>
+                <a href="/add.html"><button class="btn btn-primary">Add Student</button></a>
+                <a href="/delete.html"><button class="btn btn-danger">Delete Student</button></a>
+                <a href="/edit.html"><button class="btn btn-info">Edit Student</button></a>
+                <ul>
+                    <li th:style="'height:' + (${user.height} * 6) + 'px; '+ 'width:' + (${user.weight} * 0.8) + 'px;' " th:each="user:${us}">
+                        <span th:style="'font-size:' + 10 + 'pt; color:' + ${user.haircolor}" th:text="${user.name}"></span> <br>
+                        <span th:text="'ID = ' + ${user.sid}"></span>
+                        <span th:text="'GPA = ' + ${user.gpa}"></span>
+                        <div th:switch="${user.name}">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+<footer>
+    Copyright Arav Sharma 2024
+</footer>
+</html>
